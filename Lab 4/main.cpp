@@ -1,3 +1,11 @@
+/************
+Anesu Mudzingwa
+C++
+David Busch
+Lab 4: Temperature Output
+Due Date: 14 October 2022
+**************/
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -73,11 +81,18 @@ void star_Output()
 		// If statement to distinguish values over 99 with three characters, making them a character closer to where line is printed so "setw" is one less than the normal
 		if (x > 99)
 		{
-			cout << setw(14) << line;
+			cout << setw(14) << line; 
 		}
-		else 
+
+		if(x < 10)
 		{
-			// represents the normal width to where the line is printed for positive numbers
+			// represents the normal width to where the line is printed for positive numbers less than 10
+			cout << setw(16) << line;
+		}
+
+		else if(x >= 10 && x <= 99 )
+		{
+			// represents the normal width to where the line is printed for positive numbers(values 11-99)
 			cout << setw(15) << line;
 		}
 
